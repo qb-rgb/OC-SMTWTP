@@ -10,7 +10,7 @@ class InstanceBuilder(val instanceLength: Int) {
   private val valuesPerLine: Int = 20
 
   // Read a file
-  def readFile(filePath: String): String = {
+  private def readFile(filePath: String): String = {
     val source = scala.io.Source.fromFile(filePath)
     val lines = try {
       source.mkString
