@@ -32,10 +32,9 @@ class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
   }
 
   // Read one instance from a data file
-  private def readInstanceFrom(instanceString: String): Instance = {
+  private def readInstanceFrom(instanceLines: Array[String]): Instance = {
     val linesPerPart = this.instanceLength / this.valuesPerLine
-    val lines = instanceString split '\n'
-    val (execTimeLines, rest0) = (lines take linesPerPart, lines drop linesPerPart)
+    val (execTimeLines, rest0) = (instanceLines take linesPerPart, instanceLines drop linesPerPart)
     val (dueTimeLines, rest1) = (rest0 take linesPerPart, rest0 drop linesPerPart)
     val (weightLines, rest) = (rest1 take linesPerPart, rest1 drop linesPerPart)
 
@@ -50,6 +49,15 @@ class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
     val jobs = triplets map convertTriplet
 
     new Instance(jobs)
+  }
+
+  def getInstancesFrom(file: String): List[Instance] = {
+    val lines = (this readFile file) split '\n'
+    val linesPerInstance = (this.instanceLength / this.valuesPerLine) * 3
+
+    val instancesLines = (lines grouped linesPerInstance).toList
+
+    instancesLines map readInstanceFrom
   }
 
 }
