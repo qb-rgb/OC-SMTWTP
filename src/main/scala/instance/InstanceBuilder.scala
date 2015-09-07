@@ -4,10 +4,7 @@
   *
   * @author Quentin Baert
   */
-class InstanceBuilder(val instanceLength: Int) {
-
-  // Number of value per line in the file
-  private val valuesPerLine: Int = 20
+class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
 
   // Read a file
   private def readFile(filePath: String): String = {
