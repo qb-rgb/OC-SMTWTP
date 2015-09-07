@@ -1,3 +1,3 @@
-Quentin Baert
-Optimisation Combinatoire
-Heuristique constructive pour SMTWTP
+Quentin Baert  
+Optimisation Combinatoire  
+Heuristique constructive pour SMTWTP  
