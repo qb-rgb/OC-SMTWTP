@@ -16,4 +16,5 @@ class Instance(val jobs: List[Job]) {
 
     showIndexedJob(this.jobs, 0)
   }
+
 }
