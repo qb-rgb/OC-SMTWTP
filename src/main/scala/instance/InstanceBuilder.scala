@@ -22,7 +22,7 @@ class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
 
   // Convert some lines in a list of Int
   private def processLines(lines: Array[String]): Array[Int] =
-    (lines.mkString split "\\s+") map (value => value.toInt)
+    lines flatMap (line => (line split "\\s+") map (_.toInt))
 
   // Convert a triplet of Int in an Instance object
   private def convertTriplet(triplet: (Int, Int, Int)): Job = {
