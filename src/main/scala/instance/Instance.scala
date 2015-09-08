@@ -3,4 +3,5 @@
   *
   * @author Quentin Baert
   */
-class Instance(jobs: List[Job])
+class Instance(val jobs: List[Job]) {
+}
