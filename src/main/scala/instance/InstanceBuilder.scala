@@ -6,6 +6,9 @@
   */
 class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
 
+  /**
+    * Number of line per part in the data file
+    */
   val linesPerPart = this.instanceLength / this.valuesPerLine
 
   // Read a file
