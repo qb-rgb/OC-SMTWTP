@@ -1,6 +1,6 @@
 /**
-  * Class that represents EDD (Earliest Due Date) scheduler for the
-  * SMTWTP problem.
+  * Class to represent EDD (Earliest Due Date) schedulers for the SMTWTP
+  * problem.
   *
   * @author Quentin Baert
   */

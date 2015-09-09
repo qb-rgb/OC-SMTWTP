@@ -1,5 +1,5 @@
 /**
-  * Class to represents MDD (Modified Due Date) schedulers for the SMTWTP
+  * Class to represent MDD (Modified Due Date) schedulers for the SMTWTP
   * problem.
   *
   * @author Quentin Baert

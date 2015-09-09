@@ -1,8 +1,7 @@
 import scala.util.Random
 
 /**
-  * Class to represent a random scheduler for the instances of the SMTWTP
-  * problem.
+  * Class to represent a random scheduler for the SMTWTP problem.
   *
   * @author Quentin Baert
   */
