@@ -1,6 +1,8 @@
 /**
   * Class to represent an abstract scheduler for an instance of the SMTWTP
   * problem.
+  *
+  * @author Quentin Baert
   */
 abstract class Scheduler(val instance: Instance) {
 
