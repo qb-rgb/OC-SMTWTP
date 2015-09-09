@@ -1,5 +1,5 @@
 /**
-  * Class representing a job in the SMTWTP problem.
+  * Class to represent a job in the SMTWTP problem.
   *
   * @author Quentin Baert
   */
