@@ -44,8 +44,8 @@ class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
   // Read one instance from a data file
   private def readInstanceFrom(instanceLines: Array[String]): Instance = {
     val (execTimeLines, rest0) = (instanceLines take this.linesPerPart, instanceLines drop this.linesPerPart)
-    val (dueTimeLines, rest1) = (rest0 take this.linesPerPart, rest0 drop this.linesPerPart)
-    val weightLines = rest1 take this.linesPerPart
+    val (weightLines, rest1) = (rest0 take this.linesPerPart, rest0 drop this.linesPerPart)
+    val dueTimeLines = rest1 take this.linesPerPart
 
     val execTimes = this processLines execTimeLines
     val dueTimes = this processLines dueTimeLines
