@@ -1,6 +1,5 @@
 /**
-  * Class to represent an abstract scheduler for an instance of the SMTWTP
-  * problem.
+  * Class to represent an abstract scheduler for the SMTWTP problem.
   *
   * @author Quentin Baert
   */

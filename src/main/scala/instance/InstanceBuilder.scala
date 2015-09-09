@@ -1,5 +1,5 @@
 /**
-  * Class to build objects that create instance of the SMTWTP problem from a
+  * Class to represent objects that create instance of the SMTWTP problem from a
   * text file.
   *
   * @author Quentin Baert
