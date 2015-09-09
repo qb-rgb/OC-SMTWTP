@@ -67,7 +67,7 @@ class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
     */
   def getInstancesFrom(file: String): List[Instance] = {
     val lines = (this readFile file) split '\n'
-    val linesPerInstance = (this.instanceLength / this.valuesPerLine) * 3
+    val linesPerInstance = this.linesPerPart * 3
 
     val instancesLines = (lines grouped linesPerInstance).toList takeWhile (_.length == linesPerInstance)
 
