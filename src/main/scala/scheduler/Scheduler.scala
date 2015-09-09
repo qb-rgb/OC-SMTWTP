@@ -15,11 +15,8 @@ abstract class Scheduler(val instance: Instance) {
       else {
         val actualJob = jobs.head
         val newTime = actualTime + actualJob.execTime
-        val newScore =
-          if (newTime < actualJob.dueTime)
-            actualScore + actualJob.weight
-          else
-            actualScore
+        val penality = math.max(newTime - actualJob.dueTime, 0)
+        val newScore = actualScore + penality * actualJob.weight
 
         innerCost(jobs.tail, newTime, newScore)
       }
