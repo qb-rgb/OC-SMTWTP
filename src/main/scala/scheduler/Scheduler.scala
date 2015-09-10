@@ -13,7 +13,7 @@ abstract class Scheduler(val instance: Instance) {
     */
   def schedule: List[Job]
 
-  // Cost function for the schedule
+  // Cost function for the schedule.
   protected def costFunction(jobs: List[Job]): Int = {
     def innerCost(jobs: List[Job], actualTime: Int, actualScore: Int): Int =
       if (jobs.isEmpty)
@@ -30,7 +30,7 @@ abstract class Scheduler(val instance: Instance) {
     innerCost(jobs, 0, 0)
   }
 
-  /** Score of the schedule */
+  /** Score of the schedule. */
   val score: Int = this costFunction this.schedule
 
 }

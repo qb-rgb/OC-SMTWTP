@@ -9,10 +9,10 @@
   */
 class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
 
-  // Number of line per part in the data file
+  // Number of line per part in the data file.
   private val linesPerPart = this.instanceLength / this.valuesPerLine
 
-  // Read a file
+  // Read a file.
   private def readFile(filePath: String): String = {
     val source = scala.io.Source.fromFile(filePath)
     val lines = try {
@@ -26,7 +26,7 @@ class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
     lines
   }
 
-  // Convert some lines in a list of Int
+  // Convert some lines in a list of Int.
   private def processLines(lines: Array[String]): Array[Int] = {
     def processLine(line: String): Array[Int] =
       if (line.trim.isEmpty)
@@ -37,14 +37,14 @@ class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
     lines flatMap processLine
   }
 
-  // Convert a triplet of Int in an Instance object
+  // Convert a triplet of Int in an Instance object.
   private def convertTriplet(triplet: (Int, Int, Int)): Job = {
     val (exec, due, weight) = triplet
 
     new Job(exec, due, weight)
   }
 
-  // Read one instance from a data file
+  // Read one instance from a data file.
   private def readInstanceFrom(instanceLines: Array[String]): Instance = {
     val (execTimeLines, rest0) = (instanceLines take this.linesPerPart, instanceLines drop this.linesPerPart)
     val (weightLines, rest1) = (rest0 take this.linesPerPart, rest0 drop this.linesPerPart)
@@ -63,7 +63,7 @@ class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
 
   /** Build a list of instances from a file.
     *
-    * @param file name of the file containing the datas
+    * @param file name of the file containing the data
     *
     * @return list of instances
     */
