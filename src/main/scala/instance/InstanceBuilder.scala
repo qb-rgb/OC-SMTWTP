@@ -1,6 +1,9 @@
-/**
-  * Class to represent objects that create instance of the SMTWTP problem from a
+/** Class to represent objects that create instance of the SMTWTP problem from a
   * text file.
+  *
+  * @constructor create a new instance builder.
+  * @param instanceLength number of jobs per instance
+  * @param valuesPerLine number of values per line in the file
   *
   * @author Quentin Baert
   */
@@ -58,10 +61,9 @@ class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
     new Instance(jobs)
   }
 
-  /**
-    * Build a list of instances from a file
+  /** Build a list of instances from a file.
     *
-    * @param file name of the file containing data
+    * @param file name of the file containing the datas
     *
     * @return list of instances
     */

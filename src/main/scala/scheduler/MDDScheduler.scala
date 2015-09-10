@@ -1,11 +1,14 @@
-/**
-  * Class to represent MDD (Modified Due Date) schedulers for the SMTWTP
+/** Class to represent MDD (Modified Due Date) schedulers for the SMTWTP
   * problem.
+  *
+  * @constructor create a new MDD scheduler.
+  * @param instance instance to schedule
   *
   * @author Quentin Baert
   */
 class MDDScheduler (override val instance: Instance) extends Scheduler(instance) {
 
+  /** @see scheduler.Scheduler.schedule() */
   override def schedule: List[Job] = {
     def mddScore(actualTime: Int, job: Job): Int =
       math.max(actualTime + job.execTime, job.dueTime)
