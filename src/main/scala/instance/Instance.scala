@@ -1,5 +1,8 @@
-/**
-  * Class to represent an instance of the SMTWTP problem.
+/** Class to represent an instance of the SMTWTP problem.
+  * An instance is a set of jobs which need to be scheduled.
+  *
+  * @constructor create a new instance.
+  * @param jobs set of jobs of the instance
   *
   * @author Quentin Baert
   */

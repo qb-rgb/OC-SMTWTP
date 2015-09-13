@@ -1,12 +1,19 @@
-/**
-  * Class to represent an abstract scheduler for the SMTWTP problem.
+/** Class to represent an abstract scheduler for the SMTWTP problem.
+  *
+  * @constructor create a new scheduler.
+  * @param instance instance to schedule
   *
   * @author Quentin Baert
   */
 abstract class Scheduler(val instance: Instance) {
 
+  /** Schedule the instance.
+    *
+    * @return scheduled instance's list of jobs
+    */
   def schedule: List[Job]
 
+  // Cost function for the schedule.
   protected def costFunction(jobs: List[Job]): Int = {
     def innerCost(jobs: List[Job], actualTime: Int, actualScore: Int): Int =
       if (jobs.isEmpty)
@@ -23,6 +30,7 @@ abstract class Scheduler(val instance: Instance) {
     innerCost(jobs, 0, 0)
   }
 
+  /** Score of the schedule. */
   val score: Int = this costFunction this.schedule
 
 }

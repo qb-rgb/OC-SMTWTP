@@ -1,5 +1,9 @@
-/**
-  * Class to represent a job in the SMTWTP problem.
+/** Class to represent a job in the SMTWTP problem.
+  *
+  * @constructor create a new job.
+  * @param execTime execution time of the job
+  * @param dueTime due date of the job
+  * @param weight weight of the job
   *
   * @author Quentin Baert
   */
