@@ -1,3 +1,7 @@
+package scheduler
+
+import instance.Instance
+
 /** Class to represent an abstract scheduler for the SMTWTP problem.
   *
   * @constructor create a new scheduler.
@@ -11,11 +15,11 @@ abstract class Scheduler(val instance: Instance) {
     *
     * @return scheduled instance's list of jobs
     */
-  def schedule: List[Job]
+  def schedule: Instance
 
   // Cost function for the schedule.
-  protected def costFunction(jobs: List[Job]): Int = {
-    def innerCost(jobs: List[Job], actualTime: Int, actualScore: Int): Int =
+  protected def costFunction(jobs: Instance): Int = {
+    def innerCost(jobs: Instance, actualTime: Int, actualScore: Int): Int =
       if (jobs.isEmpty)
         actualScore
       else {

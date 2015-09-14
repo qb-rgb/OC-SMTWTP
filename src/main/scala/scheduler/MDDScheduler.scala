@@ -1,3 +1,7 @@
+package scheduler
+
+import instance.{Instance, Job}
+
 /** Class to represent MDD (Modified Due Date) schedulers for the SMTWTP
   * problem.
   *
@@ -9,7 +13,7 @@
 class MDDScheduler (override val instance: Instance) extends Scheduler(instance) {
 
   /** @see scheduler.Scheduler.schedule() */
-  override def schedule: List[Job] = {
+  override def schedule: Instance = {
     def mddScore(actualTime: Int, job: Job): Int =
       math.max(actualTime + job.execTime, job.dueTime)
 
@@ -24,7 +28,7 @@ class MDDScheduler (override val instance: Instance) extends Scheduler(instance)
       }
     }
 
-    innerSchedule(this.instance.jobs, List(), 0).reverse
+    innerSchedule(this.instance, List(), 0).reverse
   }
 
 }
