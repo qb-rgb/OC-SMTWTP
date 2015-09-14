@@ -1,3 +1,5 @@
+package instance
+
 /** Class to represent a job in the SMTWTP problem.
   *
   * @constructor create a new job.
