@@ -1,3 +1,5 @@
+package instance
+
 /** Class to represent objects that create instance of the SMTWTP problem from a
   * text file.
   *
@@ -56,9 +58,7 @@ class InstanceBuilder(val instanceLength: Int, val valuesPerLine: Int) {
 
     val triplets = (execTimes, dueTimes, weights).zipped.toList
 
-    val jobs = triplets map convertTriplet
-
-    new Instance(jobs)
+    triplets map convertTriplet
   }
 
   /** Build a list of instances from a file.

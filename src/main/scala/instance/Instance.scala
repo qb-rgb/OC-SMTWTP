@@ -1,23 +1,7 @@
-/** Class to represent an instance of the SMTWTP problem.
-  * An instance is a set of jobs which need to be scheduled.
-  *
-  * @constructor create a new instance.
-  * @param jobs set of jobs of the instance
+/** Provide classes to create instances for the SMTWTP problem.
   *
   * @author Quentin Baert
   */
-class Instance(val jobs: List[Job]) {
-
-  override def toString: String = {
-    def showIndexedJob(jobs: List[Job], index: Int): String =
-      if (jobs.isEmpty)
-        ""
-      else
-        "---------- " + index + " ----------\n" +
-        jobs.head.toString +
-        showIndexedJob(jobs.tail, index + 1)
-
-    showIndexedJob(this.jobs, 0)
-  }
-
+package object instance {
+  type Instance = List[Job]
 }
